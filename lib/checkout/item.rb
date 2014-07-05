@@ -7,5 +7,9 @@ module Checkout
       @name         = name
       @price        = price
     end
+
+    def ==(item)
+      @product_code == item.product_code
+    end
   end
 end
