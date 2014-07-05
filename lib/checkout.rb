@@ -1,6 +1,7 @@
 require "checkout/version"
 require "checkout/checkout"
+require "checkout/item"
+
 
 module Checkout
-  # Your code goes here...
 end
