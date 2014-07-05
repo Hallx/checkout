@@ -1,8 +1,8 @@
 require 'checkout'
 
 describe Checkout::ItemPromotion do
-  let(:item_travel_card)  { Checkout::Item.new(001, 'Travel Card Holder', 9.25) }
-  let(:item_watch)        { Checkout::Item.new(034, 'Round Faced Watch', 19.25) }
+  let(:item_travel_card)  { Checkout::Item.new(001, 'Travel Card Holder', "9.25") }
+  let(:item_watch)        { Checkout::Item.new(034, 'Round Faced Watch', "19.25") }
 
   describe ".new" do
     it "should initialize with an item, quantity and new price" do

@@ -3,18 +3,14 @@ module Checkout
 
     # discount percent as integer (10% -> 10)
     def initialize(amount, discount)
-      @amount   = amount
+      @amount   = BigDecimal.new(amount)
       @discount = discount
     end
 
     def apply(total)
-      puts "amount is smaller: #{total >= @amount}"
       if total >= @amount
-        r = (1.0-(@discount/100.0)) * total
-        puts "amount #{r}"
-        puts ""
+        (1.0-(@discount/100.0)) * total
       else
-        puts "total"
         total
       end
     end

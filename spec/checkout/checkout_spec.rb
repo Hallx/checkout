@@ -2,8 +2,8 @@ require 'checkout'
 
 describe Checkout do
   let(:promotional_rules) { {} }
-  let(:item_travel_card)  { Checkout::Item.new(001, 'Travel Card Holder', 9.25) }
-  let(:item_cufflinks)    { Checkout::Item.new(002, 'Personalised cufflinks ', 45.00) }
+  let(:item_travel_card)  { Checkout::Item.new(001, 'Travel Card Holder', "9.25") }
+  let(:item_cufflinks)    { Checkout::Item.new(002, 'Personalised cufflinks ', "45.00") }
 
   describe '.new' do
     it "should initialize with promotional rules" do

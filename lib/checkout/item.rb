@@ -5,7 +5,7 @@ module Checkout
     def initialize(product_code, name, price)
       @product_code = product_code
       @name         = name
-      @price        = price
+      @price        = BigDecimal.new(price)
     end
 
     def ==(item)

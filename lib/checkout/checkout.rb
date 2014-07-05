@@ -12,7 +12,7 @@ module Checkout
     end
 
     def total
-      items.inject(0) {|sum, item| sum + item.price}
+      items.inject(BigDecimal("0")) {|sum, item| sum + item.price}
     end
   end
 end

@@ -4,7 +4,7 @@ module Checkout
     def initialize(item, quantity, new_price)
       @item      = item
       @quantity  = quantity
-      @new_price = new_price
+      @new_price = BigDecimal.new(new_price)
     end
 
     def apply(items)
