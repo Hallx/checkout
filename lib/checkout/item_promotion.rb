@@ -14,6 +14,5 @@ module Checkout
         applicable_items.each { |item| item.price = @new_price }
       end
     end
-
   end
 end
