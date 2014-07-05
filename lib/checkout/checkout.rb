@@ -11,5 +11,8 @@ module Checkout
       items << item
     end
 
+    def total
+      items.inject(0) {|sum, item| sum + item.price}
+    end
   end
 end
