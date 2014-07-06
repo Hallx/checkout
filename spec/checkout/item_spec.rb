@@ -1,8 +1,8 @@
 require 'checkout'
 
 describe Checkout::Item do
-  let(:item_travel_card)  { Checkout::Item.new(001, 'Travel Card Holder', "9.25") }
-  let(:item_watch)        { Checkout::Item.new(034, 'Round Faced Watch', "19.25") }
+  let(:item_travel_card)  { FactoryGirl.build(:item) }
+  let(:item_watch)        { FactoryGirl.build(:item_watch) }
 
   describe "#==" do
     it "should return true if product_codes are same" do

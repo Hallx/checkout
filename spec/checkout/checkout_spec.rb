@@ -2,8 +2,8 @@ require 'checkout'
 
 describe Checkout do
   let(:promotional_rules) { {} }
-  let(:item_travel_card)  { Checkout::Item.new(001, 'Travel Card Holder', "9.25") }
-  let(:item_cufflinks)    { Checkout::Item.new(002, 'Personalised cufflinks ', "45.00") }
+  let(:item_travel_card)  { FactoryGirl.build(:item) }
+  let(:item_cufflinks)    { FactoryGirl.build(:item_cufflinks) }
 
   describe '.new' do
     it "should initialize with promotional rules" do
@@ -14,8 +14,8 @@ describe Checkout do
   describe '#scan' do
     let!(:checkout) { Checkout::Checkout.new(promotional_rules) }
 
-    it "should add an item to scanned list" do
-      expect { checkout.scan(item_travel_card) }.to change { checkout.total }
+    it "should change total" do
+      expect{ checkout.scan(item_travel_card) }.to change{ checkout.total }
     end
   end
 

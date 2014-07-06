@@ -10,6 +10,8 @@
 # separate helper file that requires this one and then use it only in the specs
 # that actually need it.
 #
+require 'factory_girl'
+require 'byebug'
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
 #
@@ -17,6 +19,8 @@
 RSpec.configure do |config|
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
+  config.include FactoryGirl::Syntax::Methods
+  FactoryGirl.find_definitions
 =begin
   # These two settings work together to allow you to limit a spec run
   # to individual examples or groups you care about by tagging them with
