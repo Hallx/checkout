@@ -6,11 +6,11 @@ FactoryGirl.define do
 
     initialize_with { new(item, quantity, new_price) }
 
-    trait :card_holder do
+    trait :travel_card do
       quantity  2
       new_price "8.50"
     end
 
-    factory :item_card_holder_promotion, traits: [:card_holder]
+    factory :item_travel_card_promotion, traits: [:travel_card]
   end
 end

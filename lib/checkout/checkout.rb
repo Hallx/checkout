@@ -28,7 +28,7 @@ module Checkout
     end
 
     def apply_total_rules(total_price)
-      @total_rules.inject(total_price) {|total_price, rule| rule.apply(total_price) }
+      @total_rules.inject(total_price) {|tp, rule| rule.apply(tp) }
     end
   end
 end

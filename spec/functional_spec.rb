@@ -5,8 +5,8 @@ describe Checkout do
   let(:item_cufflinks)    { FactoryGirl.build(:item_cufflinks) }
   let(:item_tshirt)       { FactoryGirl.build(:item_tshirt) }
 
-  let(:item_promotion)    { FactoryGirl.build(:item_card_holder_promotion, item: item_travel_card) }
-  let(:total_promotion)   { Checkout::TotalPromotion.new("60", 10) }
+  let(:item_promotion)    { FactoryGirl.build(:item_travel_card_promotion, item: item_travel_card) }
+  let(:total_promotion)   { FactoryGirl.build(:total_promotion) }
   let(:promotional_rules) { { total: [ total_promotion ], item: [ item_promotion ] } }
 
   let(:checkout)          { Checkout::Checkout.new(promotional_rules) }
@@ -18,7 +18,7 @@ describe Checkout do
         checkout.scan item_cufflinks
         checkout.scan item_tshirt
 
-        expect( checkout.total ).to eq(66.78)
+        expect( checkout.total ).to eq(BigDecimal.new("66.78"))
       end
     end
 
@@ -28,7 +28,7 @@ describe Checkout do
         checkout.scan item_tshirt
         checkout.scan item_travel_card
 
-        expect( checkout.total ).to eq(36.95)
+        expect( checkout.total ).to eq(BigDecimal.new("36.95"))
       end
     end
 
@@ -39,7 +39,7 @@ describe Checkout do
         checkout.scan item_travel_card
         checkout.scan item_tshirt
 
-        expect( checkout.total ).to eq(73.76)
+        expect( checkout.total ).to eq(BigDecimal.new("73.76"))
       end
     end
   end
