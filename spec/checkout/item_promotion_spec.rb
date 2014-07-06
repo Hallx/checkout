@@ -1,17 +1,17 @@
 require 'checkout'
 
 describe Checkout::ItemPromotion do
-  let(:item_travel_card)  { Checkout::Item.new(001, 'Travel Card Holder', "9.25") }
-  let(:item_watch)        { Checkout::Item.new(034, 'Round Faced Watch', "19.25") }
+  let(:item_travel_card)  { FactoryGirl.build(:item_travel_card) }
+  let(:item_watch)        { FactoryGirl.build(:item_watch) }
 
   describe ".new" do
     it "should initialize with an item, quantity and new price" do
-      expect { Checkout::ItemPromotion.new(item_travel_card, 2, 5) }.not_to raise_error
+      expect { FactoryGirl.build(:item_promotion) }.not_to raise_error
     end
   end
 
   describe "#apply" do
-    let(:item_promotion)  { Checkout::ItemPromotion.new(item_travel_card, 3, 5) }
+    let(:item_promotion) { FactoryGirl.build(:item_promotion, item: item_travel_card) }
 
     context "promotion rules are applicable" do
       let(:items) { [item_travel_card, item_travel_card, item_watch, item_travel_card ] }
