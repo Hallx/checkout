@@ -11,9 +11,24 @@ module Checkout
     end
 
     def total
-      @item_rules.each(&:apply)
+      apply_item_rules
 
-      total = @items.inject(BigDecimal("0")) {|sum, item| sum + item.price}
+      total = apply_total_rules(total_price)
+      total.round(2)
+    end
+
+    private
+
+    def total_price
+      @items.inject(BigDecimal("0")) {|sum, item| sum + item.price}
+    end
+
+    def apply_item_rules
+      @item_rules.each {|rule| rule.apply(@items) }
+    end
+
+    def apply_total_rules(total)
+      @total_rules.inject(total) {|total, rule| rule.apply(total) }
     end
   end
 end

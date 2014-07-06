@@ -1,7 +1,7 @@
 module Checkout
   class TotalPromotion
 
-    # discount percent as integer (10% -> 10)
+    # discount percent is passedd as an integer (10% -> 10)
     def initialize(amount, discount)
       @amount   = BigDecimal.new(amount)
       @discount = discount
