@@ -22,7 +22,8 @@ describe Checkout::ItemPromotion do
         expect(items[0].price).to eq(5)
         expect(items[1].price).to eq(5)
         expect(items[3].price).to eq(5)
-        #3rd item should retain its price
+
+        # 3rd item should retain its price
         expect(items[2].price).to eq(19.25)
       end
     end

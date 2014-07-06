@@ -1,5 +1,5 @@
 module Checkout
-  class ItemPromotion < Promotion
+  class ItemPromotion
 
     def initialize(item, quantity, new_price)
       @item      = item

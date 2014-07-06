@@ -1,5 +1,5 @@
 module Checkout
-  class TotalPromotion < Promotion
+  class TotalPromotion
 
     # discount percent as integer (10% -> 10)
     def initialize(amount, discount)
