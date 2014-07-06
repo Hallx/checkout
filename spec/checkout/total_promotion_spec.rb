@@ -1,5 +1,3 @@
-require 'checkout'
-
 describe Checkout::TotalPromotion do
   describe ".new" do
     it "should initialize with an amount and discount" do
@@ -8,7 +6,7 @@ describe Checkout::TotalPromotion do
   end
 
   describe "#apply" do
-    let(:total_promotion)  { Checkout::TotalPromotion.new(20, 5) }
+    let(:total_promotion) { Checkout::TotalPromotion.new(20, 5) }
 
     context "promotion rules are applicable" do
       it "should change return total after applying discount" do

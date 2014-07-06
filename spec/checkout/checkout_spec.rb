@@ -1,5 +1,3 @@
-require 'checkout'
-
 describe Checkout do
   let(:promotional_rules) { {} }
   let(:item_travel_card)  { FactoryGirl.build(:item) }

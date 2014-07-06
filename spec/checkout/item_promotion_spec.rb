@@ -1,5 +1,3 @@
-require 'checkout'
-
 describe Checkout::ItemPromotion do
   let(:item_travel_card)  { FactoryGirl.build(:item_travel_card) }
   let(:item_watch)        { FactoryGirl.build(:item_watch) }

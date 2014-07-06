@@ -14,7 +14,7 @@ FactoryGirl.define do
       price        "45.00"
     end
 
-    trait :item_tshirt do
+    trait :tshirt do
       name         'Kids T-shirt'
       price        "19.95"
     end
