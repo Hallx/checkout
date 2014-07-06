@@ -15,7 +15,7 @@ describe Checkout do
     let!(:checkout) { Checkout::Checkout.new(promotional_rules) }
 
     it "should add an item to scanned list" do
-      expect { checkout.scan(item_travel_card) }.to change { checkout.items }
+      expect { checkout.scan(item_travel_card) }.to change { checkout.total }
     end
   end
 
