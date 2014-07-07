@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Checkout::VERSION
   spec.authors       = ["Faheem Mughal"]
   spec.email         = ["faheem@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Simple checkout system}
+  spec.description   = %q{A simple checkout system to calculate total and apply current promotions.}
+  spec.homepage      = "https://github.com/Hallx/checkout"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
